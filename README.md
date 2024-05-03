@@ -1,4 +1,6 @@
-Travis-CI Build Status: [![Build Status](https://app.travis-ci.com/mrckurz/go-mux.svg?branch=master)](https://app.travis-ci.com/github/mrckurz/go-mux)
+GitHub Build Status:
+
+![example workflow](https://github.com/Bauer410/ci_go/actions/workflows/go.yml/badge.svg)
 
 # go-mux: Microservice in GoTutorial
 
