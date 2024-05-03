@@ -45,8 +45,9 @@ jobs:
 
       - name: Test 2
         run: echo ${{ secrets.SONAR_TOKEN }}
-      - name: SonarCloud Scan
+      - name: Test 3
         run: echo ${{ vars.SONAR_TOKEN }}
+      - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
