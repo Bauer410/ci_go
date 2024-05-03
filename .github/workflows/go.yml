@@ -36,6 +36,7 @@ jobs:
 
   sonarcloud:
     name: Sonarcloud Analyze
+    environment: testing_go
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
