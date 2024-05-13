@@ -39,18 +39,15 @@ jobs:
       with:
         username: ${{ secrets.REGISTRY_USER }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
-
-    - name: Get Git commit SHA
-      run: echo ::set-env name=COMMIT_SHA::$(git rev-parse --short HEAD)
       
     - name: Docker Image Build
-      run: docker image build -f Dockerfile -t chaosbaum/my-first-image:${{ env.COMMIT_SHA }} ./
+      run: docker image build -f Dockerfile -t chaosbaum/my-first-image:${{ github.sha }}} ./
       
     - name: Tag Docker image with Git commit SHA
-      run: docker tag my-first-image chaosbaum/my-first-image:${{ env.COMMIT_SHA }}
+      run: docker tag my-first-image chaosbaum/my-first-image:${{ github.sha }}
     
     - name: Docker Image Push
-      run: docker image push chaosbaum/my-first-image:${{ env.COMMIT_SHA }}
+      run: docker image push chaosbaum/my-first-image:${{ github.sha }}
       
   sonarcloud:
     name: SonarCloud
