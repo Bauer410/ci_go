@@ -38,7 +38,7 @@ jobs:
       run: docker image build -f Dockerfile -t chaosbaum/my-first-image:0.0.1 ./
 
     - name: Docker Login
-      run: echo secrets.REGISTRY_PASSWORD | docker login -username secrets.REGISTRY_USER —-password-stdin
+      run: echo ${{ secrets.REGISTRY_PASSWORD }} | docker login -username ${{ secrets.REGISTRY_USER }} —-password-stdin
 
     - name: Docker Image Push
       run: docker image push chaosbaum/my-first-image:0.0.1
