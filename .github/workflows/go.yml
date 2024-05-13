@@ -41,7 +41,7 @@ jobs:
         password: ${{ secrets.REGISTRY_PASSWORD }}
       
     - name: Docker Image Build
-      run: docker image build -f Dockerfile -t chaosbaum/my-first-image:${{ github.sha }}} ./
+      run: docker image build -f Dockerfile -t chaosbaum/my-first-image:${{ github.sha }} ./
       
     - name: Docker Image Push
       run: docker image push chaosbaum/my-first-image:${{ github.sha }}
