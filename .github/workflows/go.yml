@@ -44,7 +44,7 @@ jobs:
       run: docker image build -f Dockerfile -t chaosbaum/my-first-image:${{ github.sha }}} ./
       
     - name: Tag Docker image with Git commit SHA
-      run: docker tag my-first-image chaosbaum/my-first-image:${{ github.sha }}
+      run: docker tag chaosbaum/my-first-image:latest chaosbaum/my-first-image:${{ github.sha }}
     
     - name: Docker Image Push
       run: docker image push chaosbaum/my-first-image:${{ github.sha }}
