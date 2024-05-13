@@ -34,6 +34,9 @@ jobs:
     - name: Test
       run: go test -v ./...
 
+    - name: Docker Image Build
+      run: docker image build -f Dockerfile -t chaosbaum/my-first-image:0.0.1 ./
+
   sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest
