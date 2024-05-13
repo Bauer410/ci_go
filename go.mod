@@ -1,5 +1,4 @@
 module github.com/mrckurz/go-mux.git
-module github.com/gorilla/mux
 
 go 1.20
 
