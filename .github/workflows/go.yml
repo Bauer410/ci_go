@@ -42,7 +42,10 @@ jobs:
       
     - name: Docker Image Build
       run: docker image build -f Dockerfile -t chaosbaum/my-first-image:${{ github.sha }} ./
-      
+
+    - name: Docker Tag
+      run: docker tag chaosbaum/my-first-image:${{ github.sha }} chaosbaum/my-first-image:latest
+    
     - name: Docker Image Push
       run: docker image push chaosbaum/my-first-image:${{ github.sha }}
       
